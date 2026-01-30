@@ -8,6 +8,16 @@ setting_up_container
 network_check
 update_os
 
+msg_info "Configuring Locale"
+if command -v locale-gen >/dev/null 2>&1; then
+    sed -i 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen 2>/dev/null || true
+    locale-gen >/dev/null 2>&1 || true
+fi
+echo "LANG=C.UTF-8" >/etc/default/locale
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+msg_ok "Locale Configured"
+
 msg_info "Installing Dependencies"
 $STD apt-get install -y curl git mc sudo
 msg_ok "Installed Dependencies"
