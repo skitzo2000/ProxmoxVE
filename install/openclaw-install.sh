@@ -22,13 +22,14 @@ $STD apt-get install -y \
   ca-certificates
 msg_ok "Installed Dependencies"
 
-msg_info "Installing Docker"
+DOCKER_LATEST_VERSION=$(get_latest_github_release "moby/moby")
+
+msg_info "Installing Docker $DOCKER_LATEST_VERSION (with Compose, Buildx)"
 DOCKER_CONFIG_PATH='/etc/docker/daemon.json'
 mkdir -p $(dirname $DOCKER_CONFIG_PATH)
-echo -e '{\n  "log-driver": "journald"\n}' >$DOCKER_CONFIG_PATH
+echo -e '{\n  "log-driver": "journald"\n}' >/etc/docker/daemon.json
 $STD sh <(curl -fsSL https://get.docker.com)
-systemctl enable -q --now docker
-msg_ok "Installed Docker"
+msg_ok "Installed Docker $DOCKER_LATEST_VERSION"
 
 msg_info "Installing OpenClaw"
 mkdir -p /opt/openclaw
