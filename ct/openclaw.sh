@@ -19,9 +19,8 @@ variables
 color
 catch_errors
 
-# Define the installation script URL (For testing, you would point this to your raw gist/repo)
-# In a PR, this would be: https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/openclaw-install.sh
-SCRIPT_URL="https://raw.githubusercontent.com/skitzo200/ProxmoxVE/main/install/openclaw-install.sh"
+# Define the installation script URL
+SCRIPT_URL="https://raw.githubusercontent.com/skitzo2000/ProxmoxVE/main/install/openclaw-install.sh"
 
 start
 build_container
