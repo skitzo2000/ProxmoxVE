@@ -12,7 +12,7 @@
   "interface_port": 18789,
   "documentation": "https://github.com/getopenclaw/openclaw",
   "website": "https://openclaw.io/",
-  "logo": "",
+  "logo": "🦞",
   "description": "OpenClaw is an AI-powered automation platform for web scraping, data extraction, and workflow automation.",
   "install_methods": [
     {
