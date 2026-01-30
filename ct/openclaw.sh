@@ -5,19 +5,13 @@ source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/m
 # License: MIT
 # https://github.com/community-scripts/ProxmoxVE/raw/main/ct/openclaw.sh
 
-function header_info {
-  clear
-  qv "OpenClaw"
-}
-header_info
-echo -e "Loading..."
 APP="OpenClaw"
-VAR_DISK="20"
-VAR_CPU="2"
-VAR_RAM="4096"
-VAR_OS="ubuntu"
-VAR_VERSION="24.04"
-NSAPP=$(echo ${APP,,} | tr -d ' ')
+var_disk="20"
+var_cpu="2"
+var_ram="4096"
+var_os="ubuntu"
+var_version="24.04"
+header_info "$APP"
 
 # Define the installation script URL (For testing, you would point this to your raw gist/repo)
 # In a PR, this would be: https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/openclaw-install.sh
