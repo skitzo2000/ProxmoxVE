@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2026 community-scripts ORG
 # Author: skitzo2000
 # License: MIT
@@ -32,6 +32,15 @@ function update_script() {
 	msg_info "Updating Docker Engine"
 	$STD apt install --only-upgrade -y docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-buildx-plugin
 	msg_ok "Docker Engine updated"
+
+	if [ -d "/opt/openclaw" ]; then
+		msg_info "Updating OpenClaw container"
+		cd /opt/openclaw
+		$STD git pull
+		$STD docker compose pull
+		$STD docker compose up -d
+		msg_ok "Updated OpenClaw container"
+	fi
 
 	msg_ok "Updated successfully!"
 	exit
