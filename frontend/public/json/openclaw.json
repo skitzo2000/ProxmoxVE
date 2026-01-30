@@ -1,0 +1,35 @@
+{
+  "name": "OpenClaw",
+  "slug": "openclaw",
+  "categories": [
+    20
+  ],
+  "date_created": "2026-01-30",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "config_path": "/opt/openclaw",
+  "interface_port": 18789,
+  "documentation": "https://github.com/getopenclaw/openclaw",
+  "website": "https://openclaw.io/",
+  "logo": "",
+  "description": "OpenClaw is an AI-powered automation platform for web scraping, data extraction, and workflow automation.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/openclaw.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 4096,
+        "hdd": 20,
+        "os": "ubuntu",
+        "version": "24.04"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": []
+}
