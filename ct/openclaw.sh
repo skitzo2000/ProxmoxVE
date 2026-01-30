@@ -6,12 +6,18 @@ source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/m
 # https://github.com/community-scripts/ProxmoxVE/raw/main/ct/openclaw.sh
 
 APP="OpenClaw"
+var_tags="${var_tags:-ai}"
 var_disk="20"
 var_cpu="2"
 var_ram="4096"
 var_os="ubuntu"
 var_version="24.04"
+var_unprivileged="${var_unprivileged:-1}"
+
 header_info "$APP"
+variables
+color
+catch_errors
 
 # Define the installation script URL (For testing, you would point this to your raw gist/repo)
 # In a PR, this would be: https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/openclaw-install.sh
