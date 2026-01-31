@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/skitzo2000/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2026 community-scripts ORG
 # Author: skitzo2000
 # License: MIT
@@ -45,9 +45,6 @@ function update_script() {
 	msg_ok "Updated successfully!"
 	exit
 }
-
-# Define the installation script URL
-SCRIPT_URL="https://raw.githubusercontent.com/skitzo2000/ProxmoxVE/main/install/openclaw-install.sh"
 
 start
 build_container
