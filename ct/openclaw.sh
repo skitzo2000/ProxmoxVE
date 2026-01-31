@@ -46,9 +46,6 @@ function update_script() {
 	exit
 }
 
-# Define the installation script URL
-SCRIPT_URL="https://raw.githubusercontent.com/skitzo2000/ProxmoxVE/main/install/openclaw-install.sh"
-
 start
 build_container
 description
