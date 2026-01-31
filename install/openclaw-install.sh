@@ -25,19 +25,16 @@ $STD apt-get install -y \
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Node.js ≥22"
-NODEJS_VERSION=$(curl -s https://nodejs.org/dist/latest/ | grep -oP 'v\d+\.\d+\.\d+' | head -1)
-if ! command -v node &> /dev/null || [ "$(node -v | grep -oP '\d+' | head -1)" -lt 22 ]; then
-  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+if ! command -v node &> /dev/null || [ "$(node -v | cut -d'v' -f2 | cut -d'.' -f1)" -lt 22 ]; then
+  $STD curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
   $STD apt-get install -y nodejs
-else
-  msg_ok "Node.js $(node -v) already installed"
 fi
-msg_ok "Installed Node.js"
+msg_ok "Installed Node.js $(node -v)"
 
 msg_info "Enabling pnpm"
 $STD corepack enable
-$STD pnpm --version > /dev/null 2>&1
-msg_ok "pnpm enabled"
+$STD corepack prepare pnpm@latest --activate
+msg_ok "pnpm $(pnpm --version) enabled"
 
 DOCKER_LATEST_VERSION=$(get_latest_github_release "moby/moby")
 
@@ -47,6 +44,11 @@ mkdir -p $(dirname $DOCKER_CONFIG_PATH)
 echo -e '{\n  "log-driver": "journald"\n}' >/etc/docker/daemon.json
 $STD sh <(curl -fsSL https://get.docker.com)
 msg_ok "Installed Docker $DOCKER_LATEST_VERSION"
+
+msg_info "Starting Docker service"
+systemctl enable docker.service
+systemctl start docker.service
+msg_ok "Docker service started"
 
 msg_info "Installing OpenClaw"
 mkdir -p /opt/openclaw
@@ -61,9 +63,13 @@ msg_info "  • Configure messaging channels (WhatsApp, Telegram, Discord, etc.)
 msg_info "  • Set up your workspace"
 msg_info ""
 chmod +x ./docker-setup.sh
-./docker-setup.sh
 
-msg_ok "Installed OpenClaw"
+if ./docker-setup.sh; then
+  msg_ok "Installed OpenClaw"
+else
+  msg_error "OpenClaw setup failed. Check logs above for details."
+  exit 1
+fi
 
 msg_info "OpenClaw Setup Complete!"
 msg_info "Your Gateway is running at http://127.0.0.1:18789/"
