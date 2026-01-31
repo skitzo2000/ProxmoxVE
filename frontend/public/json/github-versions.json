@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-31T00:19:35Z",
+  "generated": "2026-01-31T18:07:59Z",
   "versions": [
     {
       "slug": "2fauth",
@@ -109,9 +109,9 @@
     {
       "slug": "bentopdf",
       "repo": "alam00000/bentopdf",
-      "version": "v1.16.1",
+      "version": "v2.0.0",
       "pinned": false,
-      "date": "2026-01-26T08:27:11Z"
+      "date": "2026-01-31T10:13:47Z"
     },
     {
       "slug": "beszel",
@@ -543,16 +543,16 @@
     {
       "slug": "invoiceninja",
       "repo": "invoiceninja/invoiceninja",
-      "version": "v5.12.50",
+      "version": "v5.12.51",
       "pinned": false,
-      "date": "2026-01-26T05:28:47Z"
+      "date": "2026-01-31T03:58:30Z"
     },
     {
       "slug": "jackett",
       "repo": "Jackett/Jackett",
-      "version": "v0.24.988",
+      "version": "v0.24.993",
       "pinned": false,
-      "date": "2026-01-30T05:55:43Z"
+      "date": "2026-01-31T05:55:28Z"
     },
     {
       "slug": "joplin-server",
@@ -760,9 +760,9 @@
     {
       "slug": "mediamtx",
       "repo": "bluenviron/mediamtx",
-      "version": "v1.15.6",
+      "version": "v1.16.0",
       "pinned": false,
-      "date": "2025-12-28T16:38:35Z"
+      "date": "2026-01-31T15:38:51Z"
     },
     {
       "slug": "meilisearch",
@@ -774,9 +774,9 @@
     {
       "slug": "memos",
       "repo": "usememos/memos",
-      "version": "v0.25.3",
+      "version": "v0.26.0",
       "pinned": false,
-      "date": "2025-11-25T15:40:41Z"
+      "date": "2026-01-31T15:28:09Z"
     },
     {
       "slug": "metube",
@@ -949,9 +949,9 @@
     {
       "slug": "paperless-ngx",
       "repo": "paperless-ngx/paperless-ngx",
-      "version": "v2.20.5",
+      "version": "v2.20.6",
       "pinned": false,
-      "date": "2026-01-21T00:12:33Z"
+      "date": "2026-01-31T07:30:27Z"
     },
     {
       "slug": "patchmon",
@@ -1397,9 +1397,9 @@
     {
       "slug": "trip",
       "repo": "itskovacs/TRIP",
-      "version": "1.37.0",
+      "version": "1.38.0",
       "pinned": false,
-      "date": "2026-01-28T22:19:14Z"
+      "date": "2026-01-31T15:56:30Z"
     },
     {
       "slug": "tududi",
